@@ -16,7 +16,7 @@ body {
 	position: relative;
 	text-transform: uppercase;
 	font-size: 19px;
-
+	font-weight: 500;
 }
 
 .page-section-header:after {
@@ -396,4 +396,95 @@ a {
 .box-offerts:hover p:nth-child(even) {
 	background: #f1f1f1;
 	color: #777777;
+}
+
+
+/*-------------------------------------------PAGE-SECTION-CONTACT-----------------------------------------*/
+
+.page-section-contact {
+	margin-top: 30px;
+}
+
+.page-section-contact-col1 {
+	padding: 50px 0;
+	color: #989898;
+}
+
+.page-contact-form {
+	display: flex;
+	justify-content: flex-start;
+}
+
+.page-section-contact-col1 {
+	width: 60%;
+	margin-right: 6%;
+}
+
+.page-section-contact input,
+.page-section-contact textarea {
+	margin-bottom: 25px;
+	width: 100%;
+	padding: 10px;
+	min-height: 60px;
+	border: .1px solid #27c7ab;
+}
+
+.page-section-contact textarea {
+	resize: none;
+	min-height: 200px;
+}
+
+.page-section-contact input,
+textarea {
+	color: #989898;
+	font-size: 21px;
+	font-weight: 100;
+	font-family: "Raleway", Arial, sans-serif;
+}
+
+.page-section-contact-col2 {
+	width: 30%;
+}
+
+.page-section-contact-col2 img {
+	margin: 30px auto 30px;
+	max-width: 100%;
+	display: block;
+}
+
+.page-section-contact-col2 .check input[type="checkbox"] {
+	display: none;
+}
+
+.page-section-contact-col2 .check input[type="checkbox"][type="checkbox"]:checked + label::before {
+	background-image: url(../img/form_ok.jpg);
+}
+
+.page-section-contact-col2 .check label {
+	color: #b1adad;
+}
+
+.page-section-contact-col2 .check label::before {
+	content: "";
+	display: inline-block;
+	float: left;
+	width: 50px;
+	height: 40px;
+	border: 1px solid #C1DED9;
+	margin: 0 10px 40px 0;
+}
+
+.page-section-contact-col2 label {
+	font-size: 16px;
+	font-weight: 100;
+	line-height: 18px;
+}
+
+.page-section-contact-col2 input[type=submit] {
+	background-color: #24ba9f;
+	color: #fff;
+	font-size: 26px;
+	font-weight: 700;
+	text-transform: uppercase;
+	border-radius: 5px;
 }
