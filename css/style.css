@@ -33,9 +33,7 @@ body {
 
 .page-header {
 	background: #000;
-	color: white;
-	font-size: 14px;
-
+	color: #fff;
 }
 
 .page-header > .container {
@@ -416,8 +414,8 @@ a {
 }
 
 .page-section-contact-col1 {
-	width: 60%;
-	margin-right: 6%;
+	width: 65%;
+	margin-right: 5%;
 }
 
 .page-section-contact input,
@@ -444,6 +442,7 @@ textarea {
 
 .page-section-contact-col2 {
 	width: 30%;
+
 }
 
 .page-section-contact-col2 img {
@@ -487,4 +486,35 @@ textarea {
 	font-weight: 700;
 	text-transform: uppercase;
 	border-radius: 5px;
+}
+
+/*------------------------------------------------FOOTER--------------------------------------------------*/
+
+footer > .container {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding-bottom: 30px;
+}
+
+.container > span {
+	font-size: 16px;
+	font-weight: 500;
+	color: #989898;
+}
+
+.page-footer-items {
+	margin-left: 325px;
+}
+
+.page-footer-text {
+	font-size: 18px;
+	font-weight: 500;
+	color: #989898;
+	text-transform: uppercase;
+	word-spacing: 1px;
+}
+
+.page-footer-text > span {
+	font-weight: 700;
 }
