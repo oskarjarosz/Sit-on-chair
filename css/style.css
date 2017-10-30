@@ -3,13 +3,22 @@ body {
 	font-size: 14px;
 }
 
-
-/*----------------------------------------------CONTAINER-------------------------------------------------*/
-
 .container {
 	max-width: 1056px;
 	width: 100%;
 	margin: 0 auto;
+}
+
+a {
+	text-decoration: none;
+}
+
+.show {
+	display: block !important;
+}
+
+.hide {
+	display: none !important;
 }
 
 .page-section-header {
@@ -48,24 +57,78 @@ body {
 	font-weight: bolder;
 }
 
-/*------------------------------------------------MENU----------------------------------------------------*/
+/* MENU */
 
 .menu-items li {
 	display: inline-block;
 	padding: 10px;
-	margin-left: 10px;
+	margin-left: 20px;
 }
 
 .menu-items li a {
 	display: inline-block;
-	color: white;
+	color: #fff;
 	font-weight: 600;
+	transition: .2s;
 }
 
-a {
-	text-decoration: none;
+.menu-items li a:hover {
+	color: #24BAA0;
 }
 
+/* SUBMENU */
+
+.submenu {
+	position: absolute;
+	min-width: 100px;
+	padding-top: 20px;
+	z-index: 2;
+	margin-left: -36px;
+	text-align: center;
+	display: none;
+}
+
+.submenu > li:first-child {
+	position: relative;
+}
+
+.submenu > li:first-child::before {
+	content: '';
+	position: absolute;
+	top: -7px;
+	margin-left: 28px;
+	border-left: 7px solid transparent;
+	border-right: 7px solid transparent;
+	border-bottom: 7px solid #000;
+}
+
+.menu > li:hover .submenu {
+	display: block;
+}
+
+.submenu > li {
+	display: block;
+	background: #000;
+	text-transform: none;
+	padding: 6px 10px;
+	transition: all .2s ease-in-out;
+}
+
+.submenu > li:hover {
+	background: #363636;
+}
+
+.submenu > li a {
+	font-weight: 300;
+}
+
+
+/*
+show submenu - simple way only css without js
+.menu-items > li:hover > ul {
+	display: block;
+}
+*/
 
 /*----------------------------------------------PAGE-SLIDER-----------------------------------------------*/
 
@@ -136,6 +199,11 @@ a {
 	border: none;
 	padding: 8px 24px;
 	word-spacing: 3px;
+	transition: .2s;
+}
+
+.page-slider-button:hover {
+	opacity: .7;
 }
 
 .page-slider-arrow-left a {
@@ -175,19 +243,16 @@ a {
 .box:first-child {
 	background-image: url(../img/box1_img.jpg);
 	margin-right: 20px;
-
 }
 
 .box:nth-child(2) {
 	background-image: url(../img/box2_img.jpg);
 	margin-right: 20px;
-
 }
 
 .box:last-child {
 	border: 1px solid #dadada;
 	padding: 20px;
-
 }
 
 .box > div {
@@ -197,13 +262,13 @@ a {
 	height: 65px;
 	bottom: 15px;
 	padding: 16px 16px 0 16px;
+	transition: .3s;
 }
 
 .box span {
 	position: relative;
 	font-weight: 700;
 	font-size: 15px;
-
 }
 
 .box span:after {
@@ -223,6 +288,12 @@ a {
 	word-spacing: 1px;
 	text-align: justify;
 	margin-top: 25px;
+}
+
+/* simple way to hide text on photos with transition without js*/
+
+.box:hover > div {
+	opacity: 0;
 }
 
 /*------------------------------------------PAGE-SECTION-OFFERTS------------------------------------------*/
@@ -436,7 +507,7 @@ a {
 textarea {
 	color: #989898;
 	font-size: 21px;
-	font-weight: 100;
+	font-weight: 300;
 	font-family: "Raleway", Arial, sans-serif;
 }
 
@@ -475,7 +546,7 @@ textarea {
 
 .page-section-contact-col2 label {
 	font-size: 16px;
-	font-weight: 100;
+	font-weight: 400;
 	line-height: 18px;
 }
 
@@ -486,6 +557,11 @@ textarea {
 	font-weight: 700;
 	text-transform: uppercase;
 	border-radius: 5px;
+	transition: .2s;
+}
+
+.page-section-contact-col2 input[type=submit]:hover {
+	opacity: .7;
 }
 
 /*------------------------------------------------FOOTER--------------------------------------------------*/
