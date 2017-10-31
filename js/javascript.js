@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-	//drop-down menu in page-header section
+	/***************************DROP-DOWN MENU (PAGE-HEADER SECTION)*********************************/
+
 	const menu = document.querySelector(".menu-items > li:first-of-type");
 	const subMenu = document.querySelector(".menu-items > li:first-of-type > ul");
 	const menuLiA = document.querySelector(".menu-items > li > a");
@@ -16,7 +17,8 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 
-	//hide text on photos in page-gallery section
+
+	/***************************HIDE TEXT ON PHOTOS (PAGE-GALLERY SECTION)**************************/
 	/*
 	const img = document.querySelector(".page-gallery .box");
 	const img2 = document.querySelector(".page-gallery .box:nth-of-type(2)");
@@ -39,6 +41,58 @@ document.addEventListener("DOMContentLoaded", function () {
 		img2.firstElementChild.classList.remove('hide');
 	});*/
 
+
+
+	/********************************************* SLIDER ******************************************/
+
+	// variabels
+	var imageCount = 1;
+	var total = 3; //number of photos
+	var arrowLeft = document.getElementById("left");
+	var arrowRight = document.getElementById("right");
+	var timer = 2500;
+
+
+	// main function 
+	function slide(x) {
+		var image = document.getElementById("img");
+		imageCount = imageCount + x;
+		if (imageCount > total) {
+			imageCount = 1;
+		} else if (imageCount < 1) {
+			imageCount = total;
+		}
+		image.src = "img/img" + imageCount + ".png";
+	}
+
+	// left arrow click
+	arrowLeft.addEventListener("click", function () {
+		slide(-1);
+		clearInterval(temp);
+		startInterval();
+	});
+
+	// right arrow click
+	arrowRight.addEventListener("click", function () {
+		slide(1);
+		clearInterval(temp);
+		startInterval();
+	});
+
+	//setInterval
+	function startInterval() {
+		temp = setInterval(function slide() {
+			var image = document.getElementById("img");
+			imageCount++;
+			if (imageCount > total) {
+				imageCount = 1;
+			} else if (imageCount < 1) {
+				imageCount = total;
+			}
+			image.src = "img/img" + imageCount + ".png";
+		}, timer);
+	}
+	startInterval();
 
 
 });

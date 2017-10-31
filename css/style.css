@@ -152,6 +152,7 @@ show submenu - simple way only css without js
 	align-items: center;
 	padding-top: 50px;
 	position: relative;
+	min-height: 450px;
 
 }
 
