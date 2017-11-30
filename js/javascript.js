@@ -169,4 +169,16 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
+	/* jQuery */
+
+	//smooth scroll
+	$('.slide-section').click(function (e) {
+		var linkHref = $(this).attr('href');
+
+		$('html, body').animate({
+			scrollTop: $(linkHref).offset().top + 15
+		}, 500);
+		e.preventDefault();
+	});
+
 });
