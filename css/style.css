@@ -25,6 +25,14 @@ a {
 	display: none !important;
 }
 
+.none {
+	display: none;
+}
+
+.block {
+	display: block!important;
+}
+
 .page-section-header {
 	position: relative;
 	text-transform: uppercase;

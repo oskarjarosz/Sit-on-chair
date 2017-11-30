@@ -95,4 +95,78 @@ document.addEventListener("DOMContentLoaded", function () {
 	startInterval();
 
 
+
+
+
+	/* Calculator */
+	var dropdownLists = [...document.querySelectorAll('.drop_down_list')];
+	var listPanel = [...document.querySelectorAll('.list_panel')];
+	var listPanelLi = [...document.querySelectorAll('.list_panel > li')];
+	var listLabel = [...document.querySelectorAll('.list_label')];
+
+	var transportCheckbox = document.querySelector('.checkbox label');
+	var transportInput = document.querySelector('.checkbox input');
+
+	/*Summary Panel Values*/
+	var chairTitle = document.querySelector('.panel_left .title');
+	var chairColor = document.querySelector('.panel_left .color');
+	var chairPattern = document.querySelector('.panel_left .pattern');
+	var chairTransport = document.querySelector('.panel_left .transport');
+	var chairTitleValue = document.querySelector('.panel_right .title.value');
+	var chairColorValue = document.querySelector('.panel_right .color.value');
+	var chairPatternValue = document.querySelector('.panel_right .pattern.value');
+	var chairTransportValue = document.querySelector('.panel_right .transport.value');
+	var sumCounter = 0;
+	var sumContainer = document.querySelector('.sum');
+
+
+
+	dropdownLists.forEach(function (el) {
+		el.addEventListener('click', function (event) {
+			if (this.lastElementChild) {
+				this.lastElementChild.classList.toggle("block");
+			}
+		});
+	});
+
+
+	listPanelLi.forEach(function (el) {
+		function calc(itemTitle, itemValue) {
+			itemTitle.innerText = el.innerText;
+			itemValue.innerText = el.dataset.price + "zł";
+			//sumCounter = 0;
+			sumCounter += parseInt(el.dataset.price);
+			sumContainer.innerText = sumCounter + "zł";
+
+		};
+		el.addEventListener('click', function (event) {
+			var label = this.parentElement.parentElement.firstElementChild;
+			label.innerText = el.innerText;
+			label.style.color = "black";
+			if (this.parentElement.parentElement === dropdownLists[0]) {
+				calc(chairTitle, chairTitleValue);
+			} else if (this.parentElement.parentElement === dropdownLists[1]) {
+				calc(chairColor, chairColorValue);
+			} else if (this.parentElement.parentElement === dropdownLists[2]) {
+				calc(chairPattern, chairPatternValue);
+			}
+		});
+	});
+
+	transportCheckbox.addEventListener('click', function (event) {
+		if (chairTransport.innerText && chairTransportValue.innerText) {
+			chairTransport.innerText = "";
+			chairTransportValue.innerText = "";
+			sumCounter -= parseInt(transportInput.dataset.transportPrice);
+		} else {
+			chairTransport.innerText = "Transport";
+			chairTransportValue.innerText = transportInput.dataset.transportPrice + "zł";
+			sumCounter += parseInt(transportInput.dataset.transportPrice);
+
+		}
+		sumContainer.innerText = sumCounter + "zł";
+	});
+
+
+
 });
